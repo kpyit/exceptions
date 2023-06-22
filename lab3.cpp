@@ -28,7 +28,7 @@ int main()
 
     try
     {
-        // проверка количества данных
+        // РїСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РґР°РЅРЅС‹С…
         if (count_str != 3)
         {
             throw std::logic_error("Invalid count input data given: " + count_str);
@@ -44,13 +44,13 @@ int main()
             throw std::logic_error("Not valid phone number: " + phone_number);
         }
 
-        // проверка формата даты 
+        // РїСЂРѕРІРµСЂРєР° С„РѕСЂРјР°С‚Р° РґР°С‚С‹ 
         int day, month, year;
         char dot1, dot2;
         std::stringstream(str_data) >> day >> dot1 >> month >> dot2 >> year;
         //std::cout << "date: " << day << " " << month << " " << year << " " << std::endl;
 
-        //проверка лимитов даты 
+        //РїСЂРѕРІРµСЂРєР° Р»РёРјРёС‚РѕРІ РґР°С‚С‹ 
         if (dot1 != '.' ||
             dot2 != '.' ||
             day < 1 || day > 31 ||
@@ -67,9 +67,9 @@ int main()
         std::string filename = surname + ".txt";
         
         
-        out.open(filename, std::ios::app); // окрываем файл для дозаписи
+        out.open(filename, std::ios::app); // РѕРєСЂС‹РІР°РµРј С„Р°Р№Р» РґР»В¤ РґРѕР·Р°РїРёСЃРё
 
-        // записываем строку
+        // Р·Р°РїРёСЃС‹РІР°РµРј СЃС‚СЂРѕРєСѓ
         if (out.is_open())        
             out << surname << " " << str_data << " " << phone_number << "\n";
         else 
@@ -85,12 +85,12 @@ int main()
 }
 /*
 
-вариант с некоректной датой рождениЯ 
+РІР°СЂРёР°РЅС‚ СЃ РЅРµРєРѕСЂРµРєС‚РЅРѕР№ РґР°С‚РѕР№ СЂРѕР¶РґРµРЅРёСЏ 
 
     Please enter your surname, date of birth(dd.mm.yyyy), and phone number : wd 45.4.4 4554
     Invalid date of birth : 45.4.4 enter your date of birth as dd.mm.yyyy
  
-однофамильцы в 1 файле
+РѕРґРЅРѕС„Р°РјРёР»СЊС†С‹ РІ 1 С„Р°Р№Р»Рµ
 
     Please enter your surname, date of birth (dd.mm.yyyy), and phone number: wd 4.4.42 47944
     surname: wd
@@ -101,7 +101,7 @@ int main()
     date of birth: 4.4.78
     phone number: 489455
 
-содержимое файла с ондофамильцами wd.txt
+СЃРѕРґРµСЂР¶РёРјРѕРµ С„Р°Р№Р»Р° СЃ РѕРЅРґРѕС„Р°РјРёР»СЊС†Р°РјРё wd.txt
 
 wd 4.4.42 47944
 wd 4.4.78 489455
